@@ -13,9 +13,7 @@
 	<meta name="description" content="Web app projects">
 
 
-	<!-- Stylesheets -->
-	
-	
+	<!-- Stylesheets -->	
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="bower_components/fontawesome/css/font-awesome.min.css">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css"/>
@@ -40,20 +38,9 @@
 
 			<div class="row">
 
-				<div class="header-logo col-xs-12">
+				<div class="header-logo col-xs-12 col-md-2">
 
 					<a href="/" class="logo text-hide">Projects Web Application</a>
-					
-					<div class="dropdown settings">
-			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cogs"></i> <span class="caret"></span></a>
-			          <ul class="dropdown-menu dropdown-menu-right">
-			            <li><a href="#">Action</a></li>
-			            <li><a href="#">Another action</a></li>
-			            <li><a href="#">Something else here</a></li>
-			            <li role="separator" class="divider"></li>
-			            <li><a href="#">Separated link</a></li>
-			          </ul>
-			        </div>
 
 					<a class="hidden-md hidden-lg" role="button" data-toggle="collapse" href="#collapse-Sidebar-Menu" aria-expanded="false" aria-controls="collapse-Sidebar-Menu">
 						<i class="fa fa-bars icon-menu"></i>
@@ -61,13 +48,22 @@
 
 				</div> <!-- END LOGO -->
 
-				<div class=" header-menu col-xs-12">
+				<div class=" header-menu col-xs-12 col-md-10">
 					
 					<ul class="menu">
 						<li><i class="fa fa-bell"></i></li>
 						<li><i class="fa fa-envelope-o"></i></li>
 						<li><i class="fa fa-tasks"></i></li>
-						<li><i class="fa fa-cogs"></i></li>
+						<li class="dropdown settings">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cogs"></i> <span class="caret"></span></a>
+				          <ul class="dropdown-menu dropdown-menu-right">
+				            <li><a href="#">Action</a></li>
+				            <li><a href="#">Another action</a></li>
+				            <li><a href="#">Something else here</a></li>
+				            <li role="separator" class="divider"></li>
+				            <li><a href="#">Separated link</a></li>
+				          </ul>
+			        	</li>
 					</ul>
 
 				</div> <!-- END TOP MENU -->
@@ -85,7 +81,7 @@
 
 			<div class="row table-row">
 
-				<div class="sidebar-menu collapse col-xs-12 col-md-4" id="collapse-Sidebar-Menu" >
+				<div class="sidebar-menu collapse col-xs-12 col-md-3 col-lg-2" id="collapse-Sidebar-Menu" >
 					
 					<ul class="navigation-menu">
 						
@@ -158,7 +154,7 @@
 
 			
 
-				<div class="content col-xs-12 col-md-8"></div><!-- END CONTENT -->
+				<div class="content col-xs-12 col-md-9 col-lg-10"></div><!-- END CONTENT -->
 
 			</div> <!-- END ROW -->
 
