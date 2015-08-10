@@ -69,14 +69,16 @@ table {
 body {
   font: 14px/21px "Open Sans", sans-serif;
   color: #333333;
+  font-weight: 300;
 }
 
 a {
-  color: #d9d9d9 !important;
+  color: #d9d9d9;
   text-decoration: none;
 }
 a:hover {
   text-decoration: none;
+  color: #d9d9d9;
 }
 a:active {
   text-decoration: none;
@@ -136,7 +138,7 @@ header .header-menu .menu {
   margin: 0;
   float: right;
 }
-header .header-menu .menu li {
+header .header-menu .menu > li {
   display: inline-block;
   margin-right: 15px;
 }
@@ -147,23 +149,20 @@ header .header-menu .menu .settings {
 header .header-menu .menu .settings ul {
   border-radius: 0;
 }
-header .header-menu .menu .settings ul li a {
-  color: black !important;
-}
 
 /*******************************************************
 === 2. MAIN SECTION ===
 *******************************************************/
 section .sidebar-menu {
   background-color: #364150;
-  padding-left: 5px;
+  padding: 20px 0 0 5px;
 }
 section .sidebar-menu .navigation-menu li a {
   color: #d9d9d9;
   text-decoration: none;
   padding: 10px;
   display: block;
-  border-top: 1px solid #3d4957;
+  border-bottom: 1px solid #3d4957;
 }
 section .sidebar-menu .navigation-menu li a:hover {
   background: #266993;
@@ -173,6 +172,26 @@ section .sidebar-menu .navigation-menu li a span {
 }
 section .sidebar-menu .navigation-menu li .sub-menu a {
   padding-left: 20px;
+}
+section .content {
+  padding-top: 20px;
+}
+section .content h2 {
+  margin-bottom: 15px;
+}
+section .content .settings {
+  background-color: #F9F9F9;
+  padding: 10px 0;
+}
+section .content .settings .dropdown-toggle {
+  background-color: #687882;
+  padding: 10px;
+}
+section .content .settings ul {
+  border-radius: 0;
+}
+section .content .settings ul a {
+  color: black !important;
 }
 
 /*******************************************************
