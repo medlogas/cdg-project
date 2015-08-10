@@ -1,0 +1,11 @@
+{
+  "name": "projects",
+  "version": "1.0.0",
+  "description": "Web App to Handle projects",
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "angular": "~1.4.3",
+    "fontawesome": "~4.4.0",
+    "angular-route": "~1.4.3"
+  }
+}

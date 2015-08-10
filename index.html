@@ -11,13 +11,14 @@
 	<!-- SEO Tags -->
 	<meta name="author" content="">
 	<meta name="description" content="Web app projects">
+
+
+	<!-- Stylesheets -->
+	
 	
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="bower_components/fontawesome/css/font-awesome.min.css">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css"/>
-
-
-	<!-- Stylesheets -->
 	<link rel="stylesheet" href="css/main.css">
 	
 	<!-- Mobile Specific meta -->
@@ -39,19 +40,34 @@
 
 			<div class="row">
 
-				<div class="logo text-hide">
+				<div class="header-logo col-xs-12">
 
-					<a href="/">Projects Web Application</a>
+					<a href="/" class="logo text-hide">Projects Web Application</a>
+					
+					<div class="dropdown settings">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cogs"></i> <span class="caret"></span></a>
+			          <ul class="dropdown-menu dropdown-menu-right">
+			            <li><a href="#">Action</a></li>
+			            <li><a href="#">Another action</a></li>
+			            <li><a href="#">Something else here</a></li>
+			            <li role="separator" class="divider"></li>
+			            <li><a href="#">Separated link</a></li>
+			          </ul>
+			        </div>
+
+					<a class="hidden-md hidden-lg" role="button" data-toggle="collapse" href="#collapse-Sidebar-Menu" aria-expanded="false" aria-controls="collapse-Sidebar-Menu">
+						<i class="fa fa-bars icon-menu"></i>
+					</a>
 
 				</div> <!-- END LOGO -->
 
-				<div class="top-menu">
+				<div class=" header-menu col-xs-12">
 					
-					<ul>
-						<li>Notifications</li>
-						<li>Messages</li>
-						<li>Taches</li>
-						<li>User Settings</li>
+					<ul class="menu">
+						<li><i class="fa fa-bell"></i></li>
+						<li><i class="fa fa-envelope-o"></i></li>
+						<li><i class="fa fa-tasks"></i></li>
+						<li><i class="fa fa-cogs"></i></li>
 					</ul>
 
 				</div> <!-- END TOP MENU -->
@@ -65,50 +81,89 @@
 	<!-- MAIN SECTION  -->
 	<section>
 
-		<div class="sidebar-menu">
+		<div class="container-fluid">
+
+			<div class="row table-row">
+
+				<div class="sidebar-menu collapse col-xs-12 col-md-4" id="collapse-Sidebar-Menu" >
+					
+					<ul class="navigation-menu">
+						
+						<li>
+							<a href="#">
+								<i class="fa fa-tachometer"></i>
+								<span>Dashbord</span>
+							</a>
+						</li>
+
+						<li>
+							<a role="button" data-parent="#collapse-Sidebar-Menu" data-toggle="collapse" href="#collapseProjects" aria-expanded="false" aria-controls="collapseProjects">
+								<i class="fa fa-tasks"></i>
+								<span>Projects</span>
+							</a>
+
+							<ul class="sub-menu collapse" id="collapseProjects">
+								<li>
+									<a href="#">
+										<i class="fa fa-bars"></i>
+										<span>Add new Project</span>
+									</a>
+								</li>
+
+								<li>
+									<a href="#">
+										<i class="fa fa-tasks"></i>
+										<span>Show All Projects</span>
+									</a>
+								</li>
+							
+							</ul> <!--END SUB-MENU -->
+
+						</li>
+
+						<li>
+							<a role="button" data-toggle="collapse" data-parent="#collapse-Sidebar-Menu" href="#collapseCompanies" aria-expanded="false" aria-controls="collapseCompanies">
+
+								<i class="fa fa-building"></i>
+								<span>Companies</span>
+							</a>
+
+							<ul class="sub-menu collapse panel-collapse" id="collapseCompanies">
+								<li>
+									<a href="#">
+										<i class="fa fa-bars"></i>
+										<span>Add new Company</span>
+									</a>
+								</li>
+
+								<li>
+									<a href="#">
+										<i class="fa fa-tasks"></i>
+										<span>Show All Companies</span>
+									</a>
+								</li>
+							</ul> <!--END SUB-MENU -->
+						</li>
+
+						<li>
+							<a href="#">	
+								<i class="fa fa-cogs"></i>
+								<span>Settings</span>
+							</a>
+						</li>
+
+					</ul> <!--END NAVIGATION MENU -->
 			
-			<ul class="navigation-menu">
-				
-				<li>
-					<span>Dashbord</span>
-				</li>
+				</div><!-- END SIDEBAR MENU -->
 
-				<li>
-					<span>Projects</span>
+			
 
-					<ul class="sub-menu">
-						<li>Add New Project</li>
-						<li>Show All Projects</li>
-					</ul> <!--END SUB-MENU -->
+				<div class="content col-xs-12 col-md-8"></div><!-- END CONTENT -->
 
-				</li>
+			</div> <!-- END ROW -->
 
-				<li>
-					<span>Companies</span>
+		</div> <!-- END CONTAINER FLUID -->
 
-					<ul class="sub-menu">
-
-						<li>
-							<span>Add New Company</span>
-						</li>
-
-						<li>
-							<span>Show All Companies</span>
-						</li>
-					</ul> <!--END SUB-MENU -->
-
-				</li>
-
-				<li>
-					<span>Settings</span>
-				</li>
-
-			</ul> <!--END NAVIGATION MENU -->
-		
-		</div><!-- END SIDEBAR MENU -->
-		
-		<div class="content"></div><!-- END CONTENT -->
-	
 	</section>
 	
 </body>

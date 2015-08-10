@@ -1,0 +1,184 @@
+/*******************************************************
+=== CSS RESET ===
+*******************************************************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  /* Android <= 2.3, iOS <= 4 */
+  -moz-box-sizing: border-box;
+  /* Firefox <= 28 */
+  box-sizing: border-box;
+  /* Chrome, Firefox 29+, IE 8+, Opera, Safari 5.1 */
+}
+
+/*******************************************************
+=== SASS VARIABLES ===
+*******************************************************/
+/*******************************************************
+=== GENERAL STYLING ===
+*******************************************************/
+body {
+  font: 14px/21px "Open Sans", sans-serif;
+  color: #333333;
+}
+
+a {
+  color: #d9d9d9 !important;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}
+
+h1 {
+  font: 36px/1.5em "Open Sans", sans-serif;
+}
+
+h2 {
+  font: 26px/1.5em "Open Sans", sans-serif;
+}
+
+h3 {
+  font: 20px/1.5em "Open Sans", sans-serif;
+}
+
+h4 {
+  font: 18px/1.5em "Open Sans", sans-serif;
+}
+
+h5 {
+  font: 14px/1.5em "Open Sans", sans-serif;
+}
+
+h6 {
+  font: 12px/1.5em "Open Sans", sans-serif;
+}
+
+/*******************************************************
+=== 1. HEADER SECTION ===
+*******************************************************/
+header {
+  padding: 1.5em 0;
+  background-color: #2b3643;
+  color: #fff;
+}
+header .header-logo {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #3d4957;
+}
+header .header-logo .logo {
+  background: url("../images/logo1.png") no-repeat;
+  height: 26px;
+  display: block;
+  width: 100px;
+  margin-bottom: 10px;
+  float: left;
+}
+header .header-logo .icon-menu {
+  float: right;
+  margin-top: 3px;
+}
+header .header-logo .settings {
+  float: right;
+  margin-left: 15px;
+}
+header .header-logo .settings ul {
+  border-radius: 0;
+}
+header .header-logo .settings ul li a {
+  color: black !important;
+}
+header .menu {
+  margin: 0;
+}
+header .menu li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+/*******************************************************
+=== 2. MAIN SECTION ===
+*******************************************************/
+section .sidebar-menu {
+  background-color: #364150;
+  padding-top: 10px;
+}
+section .sidebar-menu .navigation-menu li a {
+  color: #d9d9d9;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  border-top: 1px solid #3d4957;
+}
+section .sidebar-menu .navigation-menu li a:hover {
+  background: #266993;
+}
+section .sidebar-menu .navigation-menu li a span {
+  margin-left: 5px;
+}
+section .sidebar-menu .navigation-menu li .sub-menu a {
+  padding-left: 30px;
+}
+
+@media (min-width: 992px) {
+  section .sidebar-menu {
+    display: block;
+    height: 100vh !important;
+  }
+}
+
+
+
+/*# sourceMappingURL=../maps/main.css.map */
