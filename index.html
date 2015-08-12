@@ -19,15 +19,7 @@
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css"/>
 	<link rel="stylesheet" href="css/main.css">
 	
-	<!-- Mobile Specific meta -->
-	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-
-    <!-- Javascript -->
-	 <script src="bower_components/jquery/dist/jquery.min.js"></script>
-	 <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	 <script src="bower_components/angular-route/angular-route.min.js"></script>
-	 <script type="text/javascript" src="js/app.js"></script>
-	 <script type="text/javascript" src="js/projetsController.js"></script>
+	
 
 
 </head>
@@ -56,10 +48,10 @@
 						<li><i class="fa fa-envelope-o"></i></li>
 						<li><i class="fa fa-tasks"></i></li>
 						<li class="dropdown settings"> 
-				          <a  ng-click="main.plusone()" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADMIN </i> <span class="caret"></span></a>
+				          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADMIN </i> <span class="caret"></span></a>
 				          <ul class="dropdown-menu dropdown-menu-right">
 				            <li><a href="/"><i class="fa fa-eye"></i> Settings</a></li>
-				            <li><a href="#"><i class="fa fa-pencil-square-o"></i> Gestion</a></li>
+				            <li><a href="#"><i class="fa fa-pencil-square-o"></i> Gestion <span class="badge">4</span></a></li>
 				            <li role="separator" class="divider"></li>
 				            <li><a href="#"><i class="fa fa-trash-o"></i> logOut</a></li>
 		</ul>
@@ -86,29 +78,31 @@
 					
 					<ul class="navigation-menu">
 						
-						<li>
-							<a href="#">
+						<li >
+							<a ui-sref-active="active" ui-sref="dashbord">
 								<i class="fa fa-tachometer"></i>
 								<span>Dashbord</span>
 							</a>
 						</li>
 
 						<li>
-							<a role="button" data-parent="#collapse-Sidebar-Menu" data-toggle="collapse" data-target="#collapseProjects" aria-expanded="false" aria-controls="collapseProjects">
+							<a role="button" data-parent="#collapse-Sidebar-Menu" data-toggle="collapse" data-target="#collapseProjects" aria-expanded="false" aria-controls="collapseProjects" 
+							ng-class="{active: $state.includes('projets') ||  $state.includes('add')}">
 								<i class="fa fa-tasks"></i>
 								<span>Projects</span>
 							</a>
 
-							<ul class="sub-menu collapse" id="collapseProjects">
-								<li>
-									<a href="#/projets/add">
-										<i class="fa fa-bars"></i>
+
+							<ul ng-class="{'sub-menu collapse': true, 'in': collapse}" id="collapseProjects">
+								<li ui-sref-active="sub-active">
+									<a ui-sref="add">
+										<i class="fa fa-plus-circle"></i>
 										<span>Add new Project</span>
 									</a>
 								</li>
 
-								<li>
-									<a href="#/projets">
+								<li ui-sref-active="sub-active">
+									<a ui-sref="projets">
 										<i class="fa fa-tasks"></i>
 										<span>Show All Projects</span>
 									</a>
@@ -119,7 +113,8 @@
 						</li>
 
 						<li>
-							<a role="button" data-toggle="collapse" data-parent="#collapse-Sidebar-Menu" data-target="#collapseCompanies" aria-expanded="false" aria-controls="collapseCompanies">
+							<a role="button" data-toggle="collapse" data-parent="#collapse-Sidebar-Menu" data-target="#collapseCompanies" aria-expanded="false" aria-controls="collapseCompanies" 
+							ng-class="{active: $state.includes('companies')}">
 
 								<i class="fa fa-building"></i>
 								<span>Companies</span>
@@ -134,7 +129,7 @@
 								</li>
 
 								<li>
-									<a href="#/companies">
+									<a ui-sref="companies" ui-sref-active="sub-active">
 										<i class="fa fa-tasks"></i>
 										<span>Show All Companies</span>
 									</a>
@@ -155,13 +150,23 @@
 
 			
 
-				<div class="content col-xs-12 col-md-9 col-lg-10" ng-view></div><!-- END CONTENT -->
+				<div class="content col-xs-12 col-md-9 col-lg-10" ui-view></div><!-- END CONTENT -->
 
 			</div> <!-- END ROW -->
 
 		</div> <!-- END CONTAINER FLUID -->
 
 	</section>
+
+	<!-- Mobile Specific meta -->
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+
+    <!-- Javascript -->
+	 <script src="bower_components/jquery/dist/jquery.min.js"></script>
+	 <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	 <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	 <script type="text/javascript" src="js/app.js"></script>
+	 <script type="text/javascript" src="js/projetsController.js"></script>
 	
 </body>
 </html>

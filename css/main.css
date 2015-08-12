@@ -157,6 +157,28 @@ section .sidebar-menu {
   background-color: #364150;
   padding: 20px 0 0 5px;
 }
+section .sidebar-menu .navigation-menu li .active {
+  position: relative;
+  background-color: #2584BC;
+}
+section .sidebar-menu .navigation-menu li .active:hover {
+  background-color: #2584BC;
+}
+section .sidebar-menu .navigation-menu li .active:before {
+  content: "";
+  display: block;
+  background-image: none;
+  float: right;
+  position: absolute;
+  right: 0px;
+  top: 8px;
+  background: none;
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-right: 12px solid #ffffff;
+}
 section .sidebar-menu .navigation-menu li a {
   color: #d9d9d9;
   text-decoration: none;
@@ -165,22 +187,30 @@ section .sidebar-menu .navigation-menu li a {
   border-bottom: 1px solid #3d4957;
 }
 section .sidebar-menu .navigation-menu li a:hover {
-  background: #266993;
+  background: #3e4b5c;
 }
 section .sidebar-menu .navigation-menu li a span {
   margin-left: 10px;
 }
 section .sidebar-menu .navigation-menu li .sub-menu a {
-  padding-left: 20px;
+  padding-left: 25px;
+  font-size: 13px;
+  font-style: italic;
+}
+section .sidebar-menu .navigation-menu li .sub-menu .sub-active {
+  background-color: #3e4b5c;
 }
 section .content {
   padding-top: 20px;
 }
-section .content h2 {
-  margin-bottom: 15px;
+section .content h3 {
+  margin-bottom: 20px;
+  background-color: #68B3D1;
+  color: white;
+  padding: 10px;
+  font-weight: 300;
 }
 section .content .settings {
-  background-color: #F9F9F9;
   padding: 10px 0;
 }
 section .content .settings .dropdown-toggle {
