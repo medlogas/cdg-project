@@ -7,6 +7,9 @@
     "angular": "~1.4.3",
     "fontawesome": "~4.4.0",
     "angular-route": "~1.4.3",
-    "angular-ui-router": "~0.2.15"
+    "angular-ui-router": "~0.2.15",
+    "metisMenu": "~2.1.0",
+    "chosen": "~1.4.2",
+    "angular-chosen-localytics": "~1.0.7"
   }
 }

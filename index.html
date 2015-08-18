@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="eng" ng-app="app">
+
 <head>
 	<!-- Encoding Characters -->
 	<meta charset="utf-8">
@@ -13,19 +14,21 @@
 	<meta name="description" content="Web app projects">
 
 
-	<!-- Stylesheets -->	
+	<!-- Stylesheets -->
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="bower_components/fontawesome/css/font-awesome.min.css">
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css"/>
-	<link rel="stylesheet" href="css/main.css">
-	
-	
+	<link rel="stylesheet" type="text/css" href="css/flat-ui.min.css">
 
+	<link rel="stylesheet" type="text/css" href="bower_components/fontawesome/css/font-awesome.min.css">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="bower_components/metisMenu/dist/metisMenu.min.css">
+	<link rel="stylesheet" href="bower_components/chosen-bootstrap/chosen.bootstrap.min.css">
 
 </head>
+
 <body>
 	<!-- HEADER SECTION -->
-	<header>
+	<header ng-show="!$state.includes('login')">
 
 		<div class="container-fluid">
 
@@ -39,88 +42,156 @@
 						<i class="fa fa-bars icon-menu"></i>
 					</a>
 
-				</div> <!-- END LOGO -->
+				</div>
+				<!-- END LOGO -->
 
 				<div class=" header-menu col-xs-12 col-md-10">
-					
+
 					<ul class="menu">
 						<li><i class="fa fa-bell"></i></li>
 						<li><i class="fa fa-envelope-o"></i></li>
 						<li><i class="fa fa-tasks"></i></li>
-						<li class="dropdown settings"> 
-				          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADMIN </i> <span class="caret"></span></a>
-				          <ul class="dropdown-menu dropdown-menu-right">
-				            <li><a href="/"><i class="fa fa-eye"></i> Settings</a></li>
-				            <li><a href="#"><i class="fa fa-pencil-square-o"></i> Gestion <span class="badge">4</span></a></li>
-				            <li role="separator" class="divider"></li>
-				            <li><a href="#"><i class="fa fa-trash-o"></i> logOut</a></li>
-		</ul>
-
-</li>
+						<li class="dropdown settings">
+							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADMIN </i> <span class="caret"></span></a>
+							<ul class="dropdown-menu dropdown-menu-right">
+								<li><a href="/"><i class="fa fa-eye"></i> Settings</a></li>
+								<li><a href="#"><i class="fa fa-pencil-square-o"></i> Gestion <span class="badge">4</span></a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="#"><i class="fa fa-trash-o"></i> logOut</a></li>
+							</ul>
+						</li>
 					</ul>
 
-				</div> <!-- END TOP MENU -->
+				</div>
+				<!-- END TOP MENU -->
 
-			</div> <!-- END ROW -->
+			</div>
+			<!-- END ROW -->
 
-		</div> <!-- END CONTAINER -->
+		</div>
+		<!-- END CONTAINER -->
 
-	</header> <!-- END HEADER -->
-	
+	</header>
+	<!-- END HEADER -->
+	<div class="login-page" ng-show="$state.includes('login')">
+
+		<div class="container">
+
+			<div class="row inner-login">
+
+				<div class="col-md-4 logo">
+
+					<img class="logo-image" src="images/icon.png" alt="logo" />
+					<h4>CDG login Page</h4>
+
+				</div>
+
+				<div class="col-md-5 col-lg-5 login-form">
+
+					<form class="form-horizontal ng-pristine ng-valid ng-scope" role="form">
+
+						<div class="form-group">
+							<input class="form-control" type="text" placeholder="Enter Your Name ...">
+							<label class="login-field-icon fui-user" for="login-name"></label>
+						</div>
+
+						<div class="form-group">
+							<input class="form-control" type="password" placeholder="password">
+							<label class="login-field-icon fui-lock" for="login-pass"></label>
+						</div>
+
+						<button type="submit" class="btn-block btn btn-primary">Login in</button>
+						<a class="login-link" href="#">Lost your password?</a>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
 	<!-- MAIN SECTION  -->
-	<section>
+	<section ng-show="!$state.includes('login')">
 
 		<div class="container-fluid">
 
-			<div class="row table-row">
+			<div class="row">
 
-				<div class="sidebar-menu collapse col-xs-12 col-md-3 col-lg-2" id="collapse-Sidebar-Menu" >
-					
-					<ul class="navigation-menu">
-						
-						<li >
+				<div class="sidebar-menu collapse col-xs-12 col-md-3 col-lg-2" id="collapse-Sidebar-Menu">
+
+					<ul class="navigation-menu" class="metismenu" id="menu" metismenu>
+						<!-- ********************* DASHBORD  ****************** -->
+						<li>
 							<a ui-sref-active="active" ui-sref="dashbord">
 								<i class="fa fa-tachometer"></i>
 								<span>Dashbord</span>
 							</a>
 						</li>
 
+
+						<!-- ********************* PROJECTS  ****************** -->
 						<li>
-							<a role="button" data-parent="#collapse-Sidebar-Menu" data-toggle="collapse" data-target="#collapseProjects" aria-expanded="false" aria-controls="collapseProjects" 
-							ng-class="{active: $state.includes('projets') ||  $state.includes('add')}">
+							<a ui-sref-active="active" ui-sref="projets">
 								<i class="fa fa-tasks"></i>
 								<span>Projects</span>
+								<i ng-if class="fa fa-arrow-left"></i>
 							</a>
-
-
-							<ul ng-class="{'sub-menu collapse': true, 'in': collapse}" id="collapseProjects">
-								<li ui-sref-active="sub-active">
-									<a ui-sref="add">
-										<i class="fa fa-plus-circle"></i>
-										<span>Add new Project</span>
-									</a>
-								</li>
-
-								<li ui-sref-active="sub-active">
-									<a ui-sref="projets">
-										<i class="fa fa-tasks"></i>
-										<span>Show All Projects</span>
-									</a>
-								</li>
-							
-							</ul> <!--END SUB-MENU -->
-
 						</li>
 
-						<li>
-							<a role="button" data-toggle="collapse" data-parent="#collapse-Sidebar-Menu" data-target="#collapseCompanies" aria-expanded="false" aria-controls="collapseCompanies" 
-							ng-class="{active: $state.includes('companies')}">
 
+
+						<!-- ********************* SECTEURS  ****************** -->
+						<li>
+							<a ui-sref-active="active" ui-sref="secteurs">
+								<i class="fa fa-tasks"></i>
+								<span>Secteurs</span>
+								<i ng-if class="fa fa-arrow-left"></i>
+							</a>
+						</li>
+
+
+
+						<!-- ********************* ACHATS  ****************** -->
+						<li>
+							<a href="#" aria-expanded="false" ng-class="{active: $state.includes('achats')}">
+								<i class="fa fa-building"></i>
+								<span>Achats</span>
+							</a>
+
+							<ul class="sub-menu" aria-expanded="false">
+								<li>
+									<a ui-sref="achats.lots" ui-sref-active="sub-active">
+										<i class="fa fa-bars"></i>
+										<span>Lots</span>
+									</a>
+								</li>
+
+								<li>
+									<a ui-sref="achats.clients" ui-sref-active="sub-active">
+										<i class="fa fa-tasks"></i>
+										<span>Clients</span>
+									</a>
+								</li>
+
+								<li>
+									<a ui-sref="achats.dirigeant" ui-sref-active="sub-active">
+										<i class="fa fa-tasks"></i>
+										<span>Dirigeants</span>
+									</a>
+								</li>
+							</ul>
+							<!--END SUB-MENU -->
+						</li>
+
+
+
+
+
+						<li>
+							<a href="#" aria-expanded="false" ng-class="{active: $state.includes('companies')}">
 								<i class="fa fa-building"></i>
 								<span>Companies</span>
 							</a>
 
-							<ul class="sub-menu collapse panel-collapse" id="collapseCompanies">
+							<ul class="sub-menu" aria-expanded="false">
 								<li>
 									<a href="#/companies/add">
 										<i class="fa fa-bars"></i>
@@ -134,39 +205,62 @@
 										<span>Show All Companies</span>
 									</a>
 								</li>
-							</ul> <!--END SUB-MENU -->
+							</ul>
+							<!--END SUB-MENU -->
 						</li>
 
 						<li>
-							<a href="#">	
+							<a href="#">
 								<i class="fa fa-cogs"></i>
 								<span>Settings</span>
 							</a>
 						</li>
 
-					</ul> <!--END NAVIGATION MENU -->
-			
-				</div><!-- END SIDEBAR MENU -->
+					</ul>
+					<!--END NAVIGATION MENU -->
 
-			
+				</div>
+				<!-- END SIDEBAR MENU -->
 
-				<div class="content col-xs-12 col-md-9 col-lg-10" ui-view></div><!-- END CONTENT -->
 
-			</div> <!-- END ROW -->
 
-		</div> <!-- END CONTAINER FLUID -->
+				<div class="content col-xs-12 col-md-9 col-lg-10" ui-view></div>
+				<!-- END CONTENT -->
+
+			</div>
+			<!-- END ROW -->
+
+		</div>
+		<!-- END CONTAINER FLUID -->
 
 	</section>
 
 	<!-- Mobile Specific meta -->
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+
 	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 
-    <!-- Javascript -->
-	 <script src="bower_components/jquery/dist/jquery.min.js"></script>
-	 <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	 <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-	 <script type="text/javascript" src="js/app.js"></script>
-	 <script type="text/javascript" src="js/projetsController.js"></script>
-	
+	<!-- Javascript -->
+
+	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+
+	<script type="text/javascript" src="js/projetsController.js"></script>
+	<script type="text/javascript" src="js/ajoutController.js"></script>
+	<script type="text/javascript" src="js/detailsController.js"></script>
+	<script type="text/javascript" src="js/modifierController.js"></script>
+	<script type="text/javascript" src="js/secteursController.js"></script>
+	<script type="text/javascript" src="js/lotsController.js"></script>
+	<script type="text/javascript" src="js/modifierSecteursController.js"></script>
+
+	<script type="text/javascript" src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+	<script type="text/javascript" src="bower_components/chosen/chosen.jquery.min.js"></script>
+
+	<script type="text/javascript" src="common/metismenu.js"></script>
+	<script type="text/javascript" src="bower_components/angular-chosen-localytics/chosen.js"></script>
+
 </body>
+
 </html>

@@ -66,10 +66,15 @@ table {
 /*******************************************************
 === GENERAL STYLING ===
 *******************************************************/
+html {
+  height: 100%;
+}
+
 body {
   font: 14px/21px "Open Sans", sans-serif;
-  color: #333333;
+  color: #333;
   font-weight: 300;
+  height: 100%;
 }
 
 a {
@@ -153,31 +158,13 @@ header .header-menu .menu .settings ul {
 /*******************************************************
 === 2. MAIN SECTION ===
 *******************************************************/
+.content .login {
+  background-color: red;
+}
+
 section .sidebar-menu {
   background-color: #364150;
   padding: 20px 0 0 5px;
-}
-section .sidebar-menu .navigation-menu li .active {
-  position: relative;
-  background-color: #2584BC;
-}
-section .sidebar-menu .navigation-menu li .active:hover {
-  background-color: #2584BC;
-}
-section .sidebar-menu .navigation-menu li .active:before {
-  content: "";
-  display: block;
-  background-image: none;
-  float: right;
-  position: absolute;
-  right: 0px;
-  top: 8px;
-  background: none;
-  width: 0;
-  height: 0;
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
-  border-right: 12px solid #ffffff;
 }
 section .sidebar-menu .navigation-menu li a {
   color: #d9d9d9;
@@ -200,22 +187,43 @@ section .sidebar-menu .navigation-menu li .sub-menu a {
 section .sidebar-menu .navigation-menu li .sub-menu .sub-active {
   background-color: #3e4b5c;
 }
+section .sidebar-menu .navigation-menu li .active {
+  position: relative;
+  background-color: #2584bc;
+}
+section .sidebar-menu .navigation-menu li .active:hover {
+  background-color: #2584bc;
+}
+section .sidebar-menu .navigation-menu li .active:before {
+  content: "";
+  display: block;
+  background-image: none;
+  float: right;
+  position: absolute;
+  right: 0;
+  top: 8px;
+  background: none;
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-right: 12px solid #fff;
+}
 section .content {
   padding-top: 20px;
 }
 section .content h3 {
   margin-bottom: 20px;
-  background-color: #68B3D1;
+  background-color: #68b3d1;
   color: white;
   padding: 10px;
   font-weight: 300;
 }
-section .content .settings {
-  padding: 10px 0;
-}
 section .content .settings .dropdown-toggle {
   background-color: #687882;
   padding: 10px;
+  display: block;
+  margin-right: 10px;
 }
 section .content .settings ul {
   border-radius: 0;
@@ -223,10 +231,51 @@ section .content .settings ul {
 section .content .settings ul a {
   color: black !important;
 }
+section .content table {
+  margin-top: 10px;
+}
+section .content table th .icon-checked {
+  color: #bc1a3e !important;
+}
+section .content .checkbox {
+  margin: 0;
+  padding: 0;
+  height: 1.5em;
+}
 
 /*******************************************************
-=== RESPONSIVE DESIGN ===
-*******************************************************/
+ === LOGIN PAGE ===
+ *******************************************************/
+.login-page {
+  height: 100%;
+  padding-top: 150px;
+  background-color: #364150;
+}
+.login-page .inner-login {
+  padding: 0 1em;
+}
+.login-page .inner-login .logo {
+  text-align: center;
+  margin-bottom: 1em;
+}
+.login-page .inner-login .logo h4 {
+  color: white;
+  margin-top: 1.5em;
+}
+.login-page .inner-login .logo .logo-image {
+  width: 80px;
+  height: 80px;
+}
+.login-page .inner-login .login-form {
+  padding: 40px;
+}
+.login-page .inner-login .login-form .login-field-icon {
+  top: 10px;
+}
+
+/*******************************************************
+ === RESPONSIVE DESIGN ===
+ *******************************************************/
 @media (min-width: 992px) {
   section .sidebar-menu {
     display: block;
@@ -234,7 +283,7 @@ section .content .settings ul a {
   }
 
   header {
-    padding: 20px 0 0 0;
+    padding: 20px 0 0;
   }
   header .header-menu {
     margin-top: 0;
