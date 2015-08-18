@@ -1,0 +1,57 @@
+<ui-view>
+
+  <h3>
+    <i class="fa fa-tasks"></i> Les Secteurs
+  </h3>
+
+
+  </div>
+  <div class="dropdown settings pull-left">
+    <a ng-click="sec.plusone()" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Actions </i> <span class="caret"></span></a>
+    <ul class="dropdown-menu dropdown-menu-left">
+      <li ng-class="{disabled : sec.voir}"><a href="" ng-click="sec.details()"><i class="fa fa-eye"></i> Details</a></li>
+      <li ng-class="{disabled : sec.voir}"><a href="" ng-click="sec.modifier()"><i class="fa fa-pencil-square-o"></i> Modifier</a></li>
+      <li role="separator" class="divider"></li>
+      <li ng-class="{disabled: sec.delete}"><a href=""><i class="fa fa-trash-o"></i> Supprimer</a></li>
+    </ul>
+  </div>
+  <div class="button-add">
+    <a class="btn btn-primary" href="#/secteurs/ajout"><i class="fa fa-plus"></i> Ajouter</a>
+  </div>
+  <table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>
+          <label class="checkbox">
+            <input type="checkbox" class="custom-checkbox" ng-model="sec.master" ng-click="sec.checkall()">
+            <span class="icons">
+              <span class="icon-unchecked"></span>
+              <span class="icon-checked"></span>
+            </span>
+
+          </label>
+        </th>
+        <th>#</th>
+        <th>Nom du Projet</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="secteur in sec.datasecteurs[0].secteurs" ng-class="{success: secteur.check}">
+        <td>
+          <label class="checkbox">
+            <input type="checkbox" ng-model="secteur.check" data-toggle="checkbox" class="custom-checkbox">
+            <span class="icons">
+              <span class="icon-unchecked"></span>
+              <span class="icon-checked"></span>
+            </span>
+
+          </label>
+        </td>
+        <td>{{secteur.id}}</td>
+        <td>{{secteur.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <small>Number of Projects : {{sec.datasecteurs[0].secteurs.length}}</small>
+</ui-view>

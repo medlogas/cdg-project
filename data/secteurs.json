@@ -1,0 +1,41 @@
+[{
+    "secteurs":
+     [{
+      "id": 1,
+      "name": "Secteur 1",
+      "soussecteurs": ["soussecteur1", "soussecteur2"]
+    }, {
+      "id": 2,
+      "name": "secteur 2",
+      "soussecteurs": ["soussecteur1", "soussecteur2", "soussecteur5"]
+    }, {
+      "id": 3,
+      "name": "Secteur 3",
+      "soussecteurs": ["soussecteur1"]
+    }, {
+      "id": 4,
+      "name": "secteur 4",
+      "soussecteurs": ["soussecteur1", "soussecteur2", "soussecteur3", "soussecteur6"]
+    }, {
+      "id": 5,
+      "name": "Secteur 5",
+      "soussecteurs": ["soussecteur5", "soussecteur6"]
+    }, {
+      "id": 6,
+      "name": "secteur 6",
+      "soussecteurs": ["soussecteur1", "soussecteur2", "soussecteur6"]
+    }, {
+      "id": 7,
+      "name": "Secteur 7",
+      "soussecteurs": ["soussecteur1", "soussecteur2", "soussecteur5"]
+    }, {
+      "id": 8,
+      "name": "secteur 8",
+      "soussecteurs": ["soussecteur1", "soussecteur2", "soussecteur5", "soussecteur6"]
+    }, {
+      "id": 9,
+      "name": "secteur 9",
+      "soussecteurs": ["soussecteur6"]
+    }],
+    "allsousecteurs": ["soussecteur1", "soussecteur2", "soussecteur3", "soussecteur4", "soussecteur5", "soussecteur6", "soussecteur7", "soussecteur8", "soussecteur9"]
+}]
