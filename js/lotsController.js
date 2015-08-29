@@ -1,44 +1,59 @@
 var app = angular.module('app');
+var msg = "hello";
 
-var lotsController = function($http, $location) {
+var lotsController = function($http, $location, data, $scope) {
 
   var $this = this;
+  var arrayvendu = [];
+  $http.get('data/achats/vente-achats.json').then(function(response) {
+      $this.achats = response.data;
+      angular.forEach($this.achats, function(achat) {
+        arrayvendu.push(achat.id_lot);
+      })
 
+    })
+    // DATA FOR PROJECTS
+  $this.lots = data;
+  $scope.itemvendu = function(item) {
+    for (var i = 0; i <= arrayvendu.length; i++) {
+      if (i == item) {
+        return {
+          "warning": true
+        }
 
-  // DATA FOT PROJECTS
-  $http.get('data/achats/achats.json').then(function(response) {
-    $this.lots = response.data;
-  })
-
-$this.details= function() {
-  angular.forEach($this.lots, function(projet) {
-    if (projet.check === true) {
-      var id = projet.id;
-       $location.path("/lots/details/"+id);
+      }
     }
 
-  })
-}
+  }
+  $this.details = function() {
+    angular.forEach($this.lots, function(lot) {
+      if (lot.check === true) {
+        var id = lot.id;
+        $location.path("achats/lots/details/" + id);
+      }
 
-$this.modifier= function() {
-  angular.forEach($this.lots, function(projet) {
-    if (projet.check === true) {
-      var id = projet.id;
-       $location.path("/lots/modifier/"+id);
+    })
+  }
+
+  $this.modifier = function() {
+      angular.forEach($this.lots, function(lot) {
+        if (lot.check === true) {
+          var id = lot.id;
+          $location.path("achats/lots/modifier/" + id);
+        }
+
+      })
     }
-
-  })
-}
-  // HANDLE CHECKED LINES IN PROJECTS TABLE
-  // $this.check = true;
+    // HANDLE CHECKED LINES IN PROJECTS TABLE
+    // $this.check = true;
   $this.checkall = function() {
     if ($this.master) {
-      angular.forEach($this.lots, function(projet) {
-        projet.check = true;
+      angular.forEach($this.lots, function(lot) {
+        lot.check = true;
       })
     } else {
-      angular.forEach($this.lots, function(projet) {
-        projet.check = false;
+      angular.forEach($this.lots, function(lot) {
+        lot.check = false;
       })
     }
   }
@@ -51,8 +66,8 @@ $this.modifier= function() {
     $this.voir = true;
     $this.delete = true;
 
-    angular.forEach($this.lots, function(projet) {
-      if (projet.check) {
+    angular.forEach($this.lots, function(lot) {
+      if (lot.check) {
         count = count + 1;
       }
     })

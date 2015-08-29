@@ -1,17 +1,14 @@
 var app = angular.module('app');
 
-var ajoutController = function($http, $scope) {
+var ajoutClientController = function($http, $scope) {
   var $this = this;
 
-  $http.get("data/sous-projets.json").then(function(response) {
-    $this.sousprojets = response.data;
+  $http.get("data/achats/dirigeants.json").then(function(response) {
+    $this.dirigeants = response.data;
   })
 
-  $http.get("data/secteurs.json").then(function(response) {
-    $this.secteurs = response.data;
-  })
 
-$this.ajoutProjet = function() {
+$this.ajoutClient = function() {
   $this.data = {
     "secteurs" : $scope.secteur,
     "sousprojets" : $scope.sousprojet
@@ -27,4 +24,4 @@ $this.ajoutProjet = function() {
 });
 }
 }
-app.controller('ajoutController', ajoutController);
+app.controller('ajoutClientController', ajoutClientController);

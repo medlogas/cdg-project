@@ -1,17 +1,15 @@
 var app = angular.module('app');
 
-var ajoutController = function($http, $scope) {
+var ajoutSecController = function($http, $scope) {
   var $this = this;
 
-  $http.get("data/sous-projets.json").then(function(response) {
-    $this.sousprojets = response.data;
+
+  $http.get("data/sous-secteurs.json").then(function(response) {
+    $this.soussecteurs = response.data;
   })
 
-  $http.get("data/secteurs.json").then(function(response) {
-    $this.secteurs = response.data;
-  })
 
-$this.ajoutProjet = function() {
+$this.ajoutSecteur = function() {
   $this.data = {
     "secteurs" : $scope.secteur,
     "sousprojets" : $scope.sousprojet
@@ -27,4 +25,4 @@ $this.ajoutProjet = function() {
 });
 }
 }
-app.controller('ajoutController', ajoutController);
+app.controller('ajoutSecController', ajoutSecController);

@@ -12,7 +12,7 @@ var secteursController = function($http, $location) {
   })
 
 $this.details= function() {
-  angular.forEach($this.datasecteurs[0].secteurs, function(secteur) {
+  angular.forEach($this.datasecteurs, function(secteur) {
     if (secteur.check === true) {
       var id = secteur.id;
        $location.path("/secteurs/details/"+id);
@@ -22,7 +22,7 @@ $this.details= function() {
 }
 
 $this.modifier= function() {
-  angular.forEach($this.datasecteurs[0].secteurs, function(secteur) {
+  angular.forEach($this.datasecteurs, function(secteur) {
     if (secteur.check === true) {
       var id = secteur.id;
        $location.path("/secteurs/modifier/"+id);
@@ -34,11 +34,11 @@ $this.modifier= function() {
   // $this.check = true;
   $this.checkall = function() {
     if ($this.master) {
-      angular.forEach($this.datasecteurs[0].secteurs, function(secteur) {
+      angular.forEach($this.datasecteurs, function(secteur) {
         secteur.check = true;
       })
     } else {
-      angular.forEach($this.datasecteurs[0].secteurs, function(secteur) {
+      angular.forEach($this.datasecteurs, function(secteur) {
         secteur.check = false;
       })
     }
@@ -52,7 +52,7 @@ $this.modifier= function() {
     $this.voir = true;
     $this.delete = true;
 
-    angular.forEach($this.datasecteurs[0].secteurs, function(secteur) {
+    angular.forEach($this.datasecteurs, function(secteur) {
       if (secteur.check) {
         count = count + 1;
       }

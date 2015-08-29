@@ -4,33 +4,31 @@ var projetsController = function($http, $location) {
 
   var $this = this;
 
-
   // DATA FOT PROJECTS
   $http.get('data/data.json').then(function(response) {
     $this.projets = response.data;
   })
 
-$this.details= function() {
-  angular.forEach($this.projets, function(projet) {
-    if (projet.check === true) {
-      var id = projet.id;
-       $location.path("/projets/details/"+id);
+  $this.details = function() {
+    angular.forEach($this.projets, function(projet) {
+      if (projet.check === true) {
+        var id = projet.id;
+        $location.path("/projets/details/" + id);
+      }
+    })
+  }
+
+  $this.modifier = function() {
+      angular.forEach($this.projets, function(projet) {
+        if (projet.check === true) {
+          var id = projet.id;
+          $location.path("/projets/modifier/" + id);
+        }
+
+      })
     }
-
-  })
-}
-
-$this.modifier= function() {
-  angular.forEach($this.projets, function(projet) {
-    if (projet.check === true) {
-      var id = projet.id;
-       $location.path("/projets/modifier/"+id);
-    }
-
-  })
-}
-  // HANDLE CHECKED LINES IN PROJECTS TABLE
-  // $this.check = true;
+    // HANDLE CHECKED LINES IN PROJECTS TABLE
+    // $this.check = true;
   $this.checkall = function() {
     if ($this.master) {
       angular.forEach($this.projets, function(projet) {
