@@ -1,43 +1,22 @@
-[
-  {
-    "id": 1,
-    "name":"projet 1",
-    "secteurs": ["secteurs1", "secteur2", "secteur5"],
-    "sousprojets": ["sousprojet1", "sousprojet2", "sousprojet5", "sousprojet6"],
-    "allsecteurs":  ["secteur1", "secteur2", "secteur3", "secteur4", "secteur5", "secteur6", "secteur7" ],
-    "allsousprojets":  ["sousprojet1", "sousprojet2", "sousprojet3", "sousprojet4", "sousprojet5", "sousprojet6", "sousprojet7" ]
-  },
-  {
-    "id": 2,
-    "name":"projet 2",
-    "secteurs": ["secteurs1", "secteur2", "secteur5", "secteur6"],
-    "sousprojets": ["sousprojet1", "sousprojet2", "sousprojet5", "sousprojet6"],
-    "allsecteurs":  ["secteur1", "secteur2", "secteur3", "secteur4", "secteur5", "secteur6", "secteur7" ],
-    "allsousprojets":  ["sousprojet1", "sousprojet2", "sousprojet3", "sousprojet4", "sousprojet5", "sousprojet6", "sousprojet7" ]
-  },
-  {
-    "id": 3,
-    "name":"projet 3",
-    "secteurs": ["secteurs1", "secteur7","secteur2", "secteur5"],
-    "sousprojets": ["sousprojet1", "sousprojet2", "sousprojet5", "sousprojet6", "sousprojet9"],
-    "allsecteurs":  ["secteur1", "secteur2", "secteur3", "secteur4", "secteur5", "secteur6", "secteur7" ],
-    "allsousprojets":  ["sousprojet1", "sousprojet2", "sousprojet3", "sousprojet4", "sousprojet5", "sousprojet6", "sousprojet7" ]
-  },
-  {
-    "id": 4,
-    "name":"projet 4",
-    "secteurs": ["secteurs1", "secteur2", "secteur5", "secteur8"],
-    "sousprojets": ["sousprojet1", "sousprojet2", "sousprojet5", "sousprojet6"],
-    "allsecteurs":  ["secteur1", "secteur2", "secteur3", "secteur4", "secteur5", "secteur6", "secteur7" ],
-    "allsousprojets":  ["sousprojet1", "sousprojet2", "sousprojet3", "sousprojet4", "sousprojet5", "sousprojet6", "sousprojet7" ]
-  },
-  {
-    "id": 5,
-    "name":"projet 5",
-    "secteurs": ["secteurs1", "secteur2", "secteur5"],
-    "sousprojets": ["sousprojet1", "sousprojet2", "sousprojet5", "sousprojet6"],
-    "allsecteurs":  ["secteur1", "secteur2", "secteur3", "secteur4", "secteur5", "secteur6", "secteur7" ],
-    "allsousprojets":  ["sousprojet1", "sousprojet2", "sousprojet3", "sousprojet4", "sousprojet5", "sousprojet6", "sousprojet7" ]
-
-  }
-]
+[{
+  "id": 1,
+  "name": "projet 1"
+}, {
+  "id": 2,
+  "name": "projet 2"
+}, {
+  "id": 3,
+  "name": "projet 3"
+}, {
+  "id": 4,
+  "name": "projet 4"
+}, {
+  "id": 5,
+  "name": "projet 5"
+}, {
+  "id": 6,
+  "name": "projet 6"
+}, {
+  "id": 7,
+  "name": "projet 7"
+}]
