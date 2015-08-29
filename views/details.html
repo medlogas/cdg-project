@@ -1,19 +1,21 @@
 <h3>
   Projet :
-  <span>{{det.theParams.name}}</span>
+  <span>{{det.name}}</span>
 </h3>
 <form class="form-horizontal" role="form">
   <div class="form-group">
     <label class="col-sm-2 control-label">Nom du Projet</label>
     <div class="col-sm-8">
-      <input disabled class="form-control" id="focusedInput" type="text" placeholder="Nom du Projet ..." value="{{det.theParams.name}}">
+      <input disabled class="form-control" id="focusedInput" type="text" placeholder="Nom du Projet ..."
+      value="{{det.name}}">
     </div>
   </div>
 
   <div class="form-group">
     <label class="col-sm-2 control-label">Les Secteurs</label>
     <div class="col-sm-8">
-      <select style="overflow: auto;" data-ng-attr-size="{{det.theParams.secteurs.length+1}}" ng-model="secteur" ng-options="o as o for o in det.theParams.secteurs" class="form-control">
+      <select style="overflow: auto;" data-ng-attr-size="{{det.secteursArray.length+1}}" ng-model="secteur"
+       ng-options="o as o for o in det.secteursArray" class="form-control">
       </select>
     </div>
   </div>
@@ -21,7 +23,8 @@
   <div class="form-group">
     <label class="col-sm-2 control-label">Les sous-projets</label>
     <div class="col-sm-8">
-      <select style="overflow: auto;" data-ng-attr-size="{{det.theParams.sousprojets.length +1}}" ng-model="sousprojet" ng-options="o as o for o in det.theParams.sousprojets" class="form-control">
+      <select style="overflow: auto;" data-ng-attr-size="{{det.sousprojetsArray.length +1}}" ng-model="sousprojet"
+       ng-options="o as o for o in det.sousprojetsArray" class="form-control">
       </select>
     </div>
   </div>

@@ -1,0 +1,64 @@
+<ui-view>
+<h3>
+  <i class="fa fa-tasks"></i>
+  Les Clients
+</h3>
+
+
+</div>
+<div class="dropdown settings pull-left">
+  <a ng-click="cl.plusone()" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Actions </i> <span class="caret"></span></a>
+  <ul class="dropdown-menu dropdown-menu-left">
+<!-- ui-sref="details({id: '1'}) -->
+    <li ng-class="{disabled : cl.voir}"><a href="" ng-click="cl.details()"><i class="fa fa-eye"></i> Details</a></li>
+    <li ng-class="{disabled : cl.voir}"><a href="" ng-click="cl.modifier()"><i class="fa fa-pencil-square-o"></i> Modifier</a></li>
+    <li role="separator" class="divider"></li>
+    <li ng-class="{disabled: cl.delete}"><a href="#"><i class="fa fa-trash-o"></i> Supprimer</a></li>
+  </ul>
+</div>
+<div class="button-add">
+  <a class="btn btn-primary" ui-sref="achats.clients.ajout"><i class="fa fa-plus"></i> Ajouter</a>
+</div>
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>
+        <label class="checkbox">
+          <input type="checkbox" class="custom-checkbox" ng-model="cl.master" ng-click="cl.checkall()">
+          <span class="icons">
+            <span class="icon-unchecked"></span>
+            <span class="icon-checked"></span>
+          </span>
+
+        </label>
+      </th>
+      <th>#</th>
+      <th>Nom du client</th>
+      <th>Email</th>
+      <th>Tel</th>
+      <th>ville</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="client in cl.clients" ng-class="{success: client.check, warning: cl.hasDirigeant[$index]}">
+      <td>
+        <label class="checkbox">
+          <input type="checkbox" ng-model="client.check" data-toggle="checkbox" class="custom-checkbox">
+          <span class="icons">
+            <span class="icon-unchecked"></span>
+            <span class="icon-checked"></span>
+          </span>
+
+        </label>
+      </td>
+      <td>{{client.id}}</td>
+      <td>{{client.client_name}}</td>
+      <td>{{client.email}}</td>
+      <td>{{client.tel}}</td>
+      <td>{{client.ville}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<small>Number of clients : {{cl.clients.length}}</small>
+</ui-view>

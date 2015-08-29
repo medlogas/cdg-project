@@ -1,5 +1,5 @@
 <h3><i class="fa fa-plus-circle"></i> Ajouter un Projet</h3>
-<form class="form-horizontal" role="form">
+<form class="form-horizontal" role="form" ng-submit="sec.ajoutProjet()">
   <div class="form-group">
     <label class="col-sm-2 control-label">Nom du Projet</label>
     <div class="col-sm-8">
@@ -10,7 +10,7 @@
   <div class="form-group">
     <label class="col-sm-2 control-label">Choix des secteurs : </label>
     <div class="col-sm-8">
-      <select data-placeholder="choisir secteurs ..." ng-model="secteur" ng-options="secteur.name for secteur in sec.secteurs[0].secteurs" multiple class="chosen-select form-control" chosen>
+      <select data-placeholder="choisir secteurs ..." ng-model="secteur" ng-options="secteur.name for secteur in sec.secteurs" multiple class="chosen-select form-control" chosen>
       </select>
     </div>
   </div>
@@ -26,7 +26,7 @@
   <div class="form-group">
     <div class="col-sm-offset-2">
       <button type="submit" class="btn btn-primary">Ajouter au Projets</button>
-      <button type="submit" class="btn btn-default" ui-sref="projets">Retour au Projets</button>
+      <button type="button" class="btn btn-default" ui-sref="projets">Retour au Projets</button>
     </div>
   </div>
 

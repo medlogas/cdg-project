@@ -9,13 +9,13 @@
     <a ng-click="lot.plusone()" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Actions </i> <span class="caret"></span></a>
     <ul class="dropdown-menu dropdown-menu-left">
       <li ng-class="{disabled : lot.voir}"><a href="" ng-click="lot.details()"><i class="fa fa-eye"></i> Details</a></li>
-      <li ng-class="{disabled : lot.voir}"><a href="" ng-click="lot.modifier()"><i class="fa fa-pencil-square-o"></i> Modifier</a></li>
+      <li ng-class="{disabled : lot.voir}"><a href="" ng-click="lot.modifier()"><i class="fa fa-pencil-square-o"></i> Modifier / Vendre</a></li>
       <li role="separator" class="divider"></li>
       <li ng-class="{disabled: lot.delete}"><a href="#"><i class="fa fa-trash-o"></i> Supprimer</a></li>
     </ul>
   </div>
   <div class="button-add">
-    <a class="btn btn-primary" href="#/projets/ajout"><i class="fa fa-plus"></i> Ajouter</a>
+    <a class="btn btn-primary" ui-sref="achats.lots.ajout"><i class="fa fa-plus"></i> Ajouter</a>
   </div>
   <table class="table table-hover table-bordered">
     <thead>
@@ -32,22 +32,24 @@
         </th>
         <th>#</th>
         <th>lot</th>
+        <th>superficie</th>
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="lot in lot.lots" ng-class="{danger: lot.etat, success: !lot.etat}">
+
+      <tr ng-repeat="item in lot.lots" ng-class="itemvendu(item.id)">
         <td>
           <label class="checkbox">
-            <input type="checkbox" ng-model="lot.check" data-toggle="checkbox" class="custom-checkbox">
+            <input type="checkbox" ng-model="item.check" data-toggle="checkbox" class="custom-checkbox">
             <span class="icons">
               <span class="icon-unchecked"></span>
               <span class="icon-checked"></span>
             </span>
-
           </label>
         </td>
-        <td>{{lot.id}}</td>
-        <td>{{lot.lot_name}}</td>
+        <td>{{item.id}}</td>
+        <td>{{item.lot_name}}</td>
+        <td>{{item.superficie}}</td>
       </tr>
     </tbody>
   </table>

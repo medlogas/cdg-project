@@ -1,0 +1,55 @@
+<h3>
+  Projet :
+  <span>{{cl.clientsObj.name}}</span>
+</h3>
+<form class="form-horizontal" role="form">
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Nom du client</label>
+    <div class="col-sm-8">
+      <input disabled class="form-control" id="focusedInput" type="text" value="{{cl.clientsObj.name}}">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-8">
+      <input disabled class="form-control" id="focusedInput" type="text" value="{{cl.clientsObj.email}}">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Telephone</label>
+    <div class="col-sm-8">
+      <input disabled class="form-control" id="focusedInput" type="text" value="{{cl.clientsObj.tel}}">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">ville</label>
+    <div class="col-sm-8">
+      <input disabled class="form-control" id="focusedInput" type="text" value="{{cl.clientsObj.ville}}">
+    </div>
+  </div>
+
+  <div class="form-group" ng-show="cl.dirigeantsArray.length <= 0">
+    <div class="col-sm-offset-2 col-sm-8">
+      <a ui-sref="achats.dirigeants.ajout">Créez un Dirigeant -></a>
+    </div>
+  </div>
+
+  <div class="form-group" ng-show="cl.dirigeantsArray.length > 0">
+    <label class="col-sm-2 control-label">Les dirigeants</label>
+    <div class="col-sm-8">
+      <select style="overflow: auto;" data-ng-attr-size="{{cl.dirigeantsArray.length +1}}" ng-model="dirigeant" ng-options="o as o for o in cl.dirigeantsArray" class="form-control">
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-8">
+      <button ui-sref="achats.clients" type="submit" class="btn btn-primary">Retours aux clients</button>
+    </div>
+  </div>
+
+</form>
