@@ -70,6 +70,10 @@ html {
   height: 100%;
 }
 
+input[type=text][disabled] {
+  color: black;
+}
+
 body {
   font: 14px/21px "Open Sans", sans-serif;
   color: #333;
@@ -212,6 +216,13 @@ section .sidebar-menu .navigation-menu li .active:before {
 section .content {
   padding-top: 20px;
 }
+section .content a {
+  color: #2584bc;
+}
+section .content .btn,
+section .content a[role=button] {
+  color: white;
+}
 section .content h3 {
   margin-bottom: 20px;
   background-color: #68b3d1;
@@ -234,8 +245,15 @@ section .content .settings ul a {
 section .content table {
   margin-top: 10px;
 }
-section .content table th .icon-checked {
+section .content table tr th .icon-checked {
   color: #bc1a3e !important;
+}
+section .content table tr td {
+  min-width: 100px;
+}
+section .content table tr td:first-child {
+  width: 40px;
+  min-width: 40px;
 }
 section .content .checkbox {
   margin: 0;
